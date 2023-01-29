@@ -25,6 +25,7 @@ int main(void)
 			printing_board(grid);
 			player1_move(grid);
 			moves++;
+			
 			victory = game_over(grid, 1);
 			if (victory != 0)
 				break;
