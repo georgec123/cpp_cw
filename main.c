@@ -18,13 +18,13 @@ int main(void)
 	/*The game starts*/
 	switch (player)
 	{
-		case 1:
-			/*Game if player 1 begins*/
-			while (victory == 0)
-			{
-				printing_board(grid);
-				player1_move(grid);
-				moves++;
+	case 1:
+		/*Game if player 1 begins*/
+		while (victory == 0)
+		{
+			printing_board(grid);
+			player1_move(grid);
+			moves++;
 			
 				victory = game_over(grid, 1);
 				/*If 9 moves have already been made without succes the game is over in draw*/
