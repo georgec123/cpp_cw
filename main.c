@@ -18,28 +18,29 @@ int main(void)
 	/*The game starts*/
 	switch (player)
 	{
-	case 1:
-		/*Game if player 1 begins*/
-		while (victory == 0)
-		{
-			printing_board(grid);
-			player1_move(grid);
-			moves++;
+		case 1:
+			/*Game if player 1 begins*/
+			while (victory == 0)
+			{
+				printing_board(grid);
+				player1_move(grid);
+				moves++;
 			
-			victory = game_over(grid, 1);
-			if (victory != 0)
-				break;
-			/*If 9 moves have already been made without succes the game is over in draw*/
-			if (moves == 9)
-				break;
-			printing_board(grid);
-			player2_move(grid);
-			moves++;
-			victory = game_over(grid, 2);
-			if (victory != 0)
-				break;
-		}
-		break;
+				victory = game_over(grid, 1);
+				/*If 9 moves have already been made without succes the game is over in draw*/
+
+				if (victory != 0 || moves > 9) {
+					break;
+				}
+			
+				printing_board(grid);
+				player2_move(grid);
+				moves++;
+				victory = game_over(grid, 2);
+				if (victory != 0 | moves >9)
+					break;
+			}
+			break;
 	case 2:
 		/*Game if player 2 begins*/
 		while (victory == 0)
@@ -48,16 +49,15 @@ int main(void)
 			player2_move(grid);
 			moves++;
 			victory = game_over(grid, 2);
-			if (victory != 0)
+			if (victory != 0 | moves > 9)
 				break;
 			/*If 9 moves have already been made without succes the game is over in draw*/
-			if (moves == 9)
-				break;
+
 			printing_board(grid);
 			player1_move(grid);
 			moves++;
 			victory = game_over(grid, 1);
-			if (victory != 0)
+			if (victory != 0 | moves > 9)
 				break;
 		}
 		break;
@@ -66,6 +66,7 @@ int main(void)
 	}
 	printf("The game is over.\n");
 	printing_board(grid);
+	
 	if (victory == 0)
 	{
 		printf("There is a draw.\n");
