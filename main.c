@@ -26,6 +26,8 @@ int main(void)
 			player1_move(grid);
 			moves++;
 			
+			
+			/* test line*/
 			victory = game_over(grid, 1);
 			if (victory != 0)
 				break;
