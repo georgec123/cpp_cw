@@ -1,0 +1,34 @@
+﻿  auxi.cpp
+  main.c
+C:\Users\Usuario\source\repos\coursework_6\main.c(24,21): warning C4047: 'función': 'int **' es distinto en los niveles de direccionamiento indirecto de 'int [3][3]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(24,17): warning C4024: 'printing_board': tipos distintos para el parámetro formal y el parámetro real 1
+C:\Users\Usuario\source\repos\coursework_6\main.c(26,8): warning C4244: 'función': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\Usuario\source\repos\coursework_6\main.c(37,21): warning C4047: 'función': 'int **' es distinto en los niveles de direccionamiento indirecto de 'int [3][3]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(37,17): warning C4024: 'player1_move': tipos distintos para el parámetro formal y el parámetro real 1
+C:\Users\Usuario\source\repos\coursework_6\main.c(38,28): warning C4047: 'función': 'int **' es distinto en los niveles de direccionamiento indirecto de 'int [3][3]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(38,24): warning C4024: 'game_over': tipos distintos para el parámetro formal y el parámetro real 1
+C:\Users\Usuario\source\repos\coursework_6\main.c(41,29): warning C4047: '=': 'char' es distinto en los niveles de direccionamiento indirecto de 'char [14]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(44,21): warning C4047: 'función': 'int **' es distinto en los niveles de direccionamiento indirecto de 'int [3][3]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(44,17): warning C4024: 'player2_move': tipos distintos para el parámetro formal y el parámetro real 1
+C:\Users\Usuario\source\repos\coursework_6\main.c(45,28): warning C4047: 'función': 'int **' es distinto en los niveles de direccionamiento indirecto de 'int [3][3]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(45,24): warning C4024: 'game_over': tipos distintos para el parámetro formal y el parámetro real 1
+C:\Users\Usuario\source\repos\coursework_6\main.c(48,29): warning C4047: '=': 'char' es distinto en los niveles de direccionamiento indirecto de 'char [14]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(58,21): warning C4047: 'función': 'int **' es distinto en los niveles de direccionamiento indirecto de 'int [3][3]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(58,17): warning C4024: 'player2_move': tipos distintos para el parámetro formal y el parámetro real 1
+C:\Users\Usuario\source\repos\coursework_6\main.c(59,28): warning C4047: 'función': 'int **' es distinto en los niveles de direccionamiento indirecto de 'int [3][3]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(59,24): warning C4024: 'game_over': tipos distintos para el parámetro formal y el parámetro real 1
+C:\Users\Usuario\source\repos\coursework_6\main.c(62,29): warning C4047: '=': 'char' es distinto en los niveles de direccionamiento indirecto de 'char [14]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(65,21): warning C4047: 'función': 'int **' es distinto en los niveles de direccionamiento indirecto de 'int [3][3]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(65,17): warning C4024: 'player1_move': tipos distintos para el parámetro formal y el parámetro real 1
+C:\Users\Usuario\source\repos\coursework_6\main.c(66,28): warning C4047: 'función': 'int **' es distinto en los niveles de direccionamiento indirecto de 'int [3][3]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(66,24): warning C4024: 'game_over': tipos distintos para el parámetro formal y el parámetro real 1
+C:\Users\Usuario\source\repos\coursework_6\main.c(69,29): warning C4047: '=': 'char' es distinto en los niveles de direccionamiento indirecto de 'char [14]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(23,7): warning C4047: 'inicializando': 'char' es distinto en los niveles de direccionamiento indirecto de 'char [5]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(82,28): warning C4028: parámetro formal 1 distinto de la declaración
+C:\Users\Usuario\source\repos\coursework_6\main.c(99,23): warning C4047: '=': 'int' es distinto en los niveles de direccionamiento indirecto de 'char [2]'
+C:\Users\Usuario\source\repos\coursework_6\main.c(107,23): warning C4047: '=': 'int' es distinto en los niveles de direccionamiento indirecto de 'char [2]'
+  Generando código
+  Previous IPDB not found, fall back to full compilation.
+  All 12 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generación de código finalizada
+  coursework_6.vcxproj -> C:\Users\Usuario\source\repos\coursework_6\x64\Release\coursework_6.exe
