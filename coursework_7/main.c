@@ -47,14 +47,17 @@ void eratosthenes(int n, int* series)
 }
 
 void optimised_Eratostenes(int n)
-{
-	int values = (n + (n % 2)) / 2;
-	int* a = (int*)calloc((values - 1), sizeof(int));
+{	
+	int diff = n-3;
+
+	int values = 1+(diff + (diff % 2))/2;
+	// (n + (n % 2)) / 2;
+	int* a = (int*)calloc((values-1), sizeof(int));
 	int i, j;
 	for (i = 3; i * i <= n; i++)
 		//To avoid needing the Sqrt function we simply make the condition i^2 <= n (including as stated by the question)
 	{
-		if (*(a + i - 2) == 0)
+		if (*(a + i - 3) == 0)
 			//If prime we make all its multiples not prime in the list by 1 -> 0. This is assured by the j = j+i step size.
 			//Additionally we can start in i*i because all the previous elements have to be multiple of a
 			//previous prime and hence have already been converted to 0.
@@ -62,29 +65,35 @@ void optimised_Eratostenes(int n)
 			// printf("->%d\n", (i));
 			for (j = i * i; j <= n; j += i)
 			{
+				if (j % 2 == 1)
+					*(a + (j - 3)/2) = 1;
+
 				// printf("%d\n", j);
-				*(a + j - 2) = 1;
 			}
 		}
 	}
 	if (n >= 2)
 		printf("2 ");
 
-	for (i = 3; i <= values; i++)
-		if (*(a + i - 2) == 0)
+	for (i = 0; i <= values; i++)
+		if (*(a + i) == 0)
 			/*It prints only the non zero values*/
 			/*It is important to note that here the list acts
 			as a list of boolean elements, indicating the veracity of prime/not prime*/
-			printf("%d ", (i-3) * 2 + 3);
+			printf("%d ", i * 2 + 3);
 
 }
 
 int main(void)
 {
 	int N;
+
 	printf("Input an integer number to use the Eratostenes sieve up to that value.\n");
 	scanf("%d", &N);
-	/*int* a = (int*)malloc((N - 1) * sizeof(int));
+	
+	printf("Normal Sieve\n");
+	
+	int* a = (int*)malloc((N - 1) * sizeof(int));
 	series_generator(N, a);
 	printf("The original series is:\n");
 	series_printer(N, a);
@@ -92,7 +101,11 @@ int main(void)
 	eratosthenes(N, a);
 	printf("The prime numbers less or equal than %d are:\n", N);
 	series_printer(N, a);
-	free(a);*/
+	free(a);
+
+	printf("\nOptimised Sieve\n");
 	optimised_Eratostenes(N);
+
+
 	return EXIT_SUCCESS;
 }
