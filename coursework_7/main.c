@@ -51,7 +51,7 @@ void optimised_Eratostenes(int n)
 	int values = (n + (n % 2)) / 2;
 	int* a = (int*)calloc((values - 1), sizeof(int));
 	int i, j;
-	for (i = 2; i * i <= n; i++)
+	for (i = 3; i * i <= n; i++)
 		//To avoid needing the Sqrt function we simply make the condition i^2 <= n (including as stated by the question)
 	{
 		if (*(a + i - 2) == 0)
@@ -59,20 +59,23 @@ void optimised_Eratostenes(int n)
 			//Additionally we can start in i*i because all the previous elements have to be multiple of a
 			//previous prime and hence have already been converted to 0.
 		{
-			printf("->%d\n", (i));
+			// printf("->%d\n", (i));
 			for (j = i * i; j <= n; j += i)
 			{
-				printf("%d\n", j);
+				// printf("%d\n", j);
 				*(a + j - 2) = 1;
 			}
 		}
 	}
-	for (i = 2; i <= values; i++)
+	if (n >= 2)
+		printf("2 ");
+
+	for (i = 3; i <= values; i++)
 		if (*(a + i - 2) == 0)
 			/*It prints only the non zero values*/
 			/*It is important to note that here the list acts
 			as a list of boolean elements, indicating the veracity of prime/not prime*/
-			printf("%d ", 2*i+1);
+			printf("%d ", (i-3) * 2 + 3);
 
 }
 
