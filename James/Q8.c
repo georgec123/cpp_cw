@@ -98,8 +98,6 @@ void display(char const *string, struct node *ptr)
 struct node *addition(struct node *ptr1, struct node *ptr2, struct node *p_add)
 {
     //ptr1 + ptr2
-    //display("", ptr1);
-    //display("", ptr2);
     while (ptr1 != NULL && ptr2 != NULL)
     {
         struct node *ptr = (struct node *)malloc(sizeof(struct node));
@@ -129,7 +127,6 @@ struct node *addition(struct node *ptr1, struct node *ptr2, struct node *p_add)
         }
         ptr->next = NULL;
         p_add = push(ptr, p_add);
-        //display("", p_add);
     }
 
     while (ptr1 != NULL || ptr2 != NULL)
@@ -140,11 +137,6 @@ struct node *addition(struct node *ptr1, struct node *ptr2, struct node *p_add)
             printf("Out of Memory Space:\n");
             exit(0);
         }
-        //display("", ptr1);
-        //display("", ptr2);
-        //display("", ptr);
-        //printf("%d \n", ptr->coeff);
-        //printf("%d \n", ptr->exp);
         if (ptr1 != NULL)
         {
             ptr->exp = ptr1->exp;
@@ -158,14 +150,7 @@ struct node *addition(struct node *ptr1, struct node *ptr2, struct node *p_add)
             ptr2 = ptr2->next;
         }
         ptr->next = NULL;
-        //display("", ptr1);
-        //display("", ptr2);
-        //display("", ptr);
-        //display("", p_add);
-        //printf("%d \n", ptr->coeff);
-        //printf("%d \n", ptr->exp);
         p_add = push(ptr, p_add);
-        //display("", p_add);
     }
     return p_add;
 }
@@ -263,15 +248,6 @@ struct node *multiplication(struct node *ptr1, struct node *ptr2, struct node *p
     while (ptr1 != NULL)
     {
         ptr_dummy = ptr2;
-        printf("Welcome \n");
-        display("", ptr1);
-        display("", ptr_dummy);
-        display("", p_multi);
-        //printf("%d \n", ptr1->coeff);
-        //printf("%d \n", ptr1->exp);
-        //printf("%d \n", ptr2->coeff);
-        //printf("%d \n", ptr2->exp);
-        //display("", ptr1->next);
         while (ptr_dummy != NULL)
         {
             printf("Welcome again \n");
@@ -283,32 +259,12 @@ struct node *multiplication(struct node *ptr1, struct node *ptr2, struct node *p
             }
             ptr->exp = ptr1->exp + ptr_dummy->exp;
             ptr->coeff = ptr1->coeff * ptr_dummy->coeff;
-            //ptr2 = ptr2->next;
             ptr_dummy = ptr_dummy->next;
             ptr->next = NULL;
-            display("", ptr1);
-            display("", ptr_dummy);
-            //printf("%d \n", ptr->coeff);
-            //printf("%d \n", ptr->exp);
-            display("", p_multi);
-            display("", ptr);
             p_multi = addition(p_multi, ptr, ptr_add_dummy);
-            display("", ptr1);
-            display("", ptr_dummy);
-            display("", p_multi);
-            //printf("%d \n", ptr1->coeff);
-            //printf("%d \n", ptr1->exp);
         }
-        /*
-        */
         ptr1 = ptr1->next;
-        printf("Welcome some more \n");
-        display("", ptr1);
-        display("", ptr2);
-        display("", p_multi);
     }
-    /*
-    */
     return p_multi;
 }
 
