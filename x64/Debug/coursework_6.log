@@ -1,4 +1,0 @@
-﻿  main.c
-C:\Users\Usuario\source\repos\coursework_6\main.c(14,8): warning C4244: 'función': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  LINK : no se encontró C:\Users\Usuario\source\repos\coursework_6\x64\Debug\coursework_6.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-  coursework_6.vcxproj -> C:\Users\Usuario\source\repos\coursework_6\x64\Debug\coursework_6.exe
