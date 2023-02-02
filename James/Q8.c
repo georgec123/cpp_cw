@@ -166,7 +166,7 @@ struct node *subtraction(struct node *ptr1, struct node *ptr2, struct node *p_su
 {
     //ptr1 - ptr2
 
-    while (ptr1->next != NULL && ptr2->next != NULL)
+    while (ptr1 != NULL && ptr2 != NULL)
     {
         struct node *ptr = (struct node *)malloc(sizeof(struct node));
         if (ptr == 0)
@@ -200,7 +200,7 @@ struct node *subtraction(struct node *ptr1, struct node *ptr2, struct node *p_su
         p_sub = push(ptr, p_sub);
     }
 
-    while (ptr1->next != NULL || ptr2->next != NULL)
+    while (ptr1 != NULL || ptr2 != NULL)
     {
         struct node *ptr = (struct node *)malloc(sizeof(struct node));
         if (ptr == 0)
@@ -208,47 +208,17 @@ struct node *subtraction(struct node *ptr1, struct node *ptr2, struct node *p_su
             printf("Out of Memory Space:\n");
             exit(0);
         }
-        else
+        if (ptr1 != NULL)
         {
             ptr->coeff = ptr1->coeff;
             ptr->exp = ptr1->exp;
             ptr1 = ptr1->next;
         }
-        if (ptr2 != NULL)
+        else
         {
             ptr->coeff = -1 * ptr2->coeff;
             ptr->exp = ptr2->exp;
             ptr2 = ptr2->next;
-        }
-        ptr->next = NULL;
-        p_sub = push(ptr, p_sub);
-    }
-
-    if (ptr1->next == NULL && ptr2->next == NULL)
-    {
-        struct node *ptr = (struct node *)malloc(sizeof(struct node));
-        if (ptr == 0)
-        {
-            printf("Out of Memory Space:\n");
-            exit(0);
-        }
-        if (ptr1->exp > ptr2->exp)
-        {
-            ptr->exp = ptr1->exp;
-            ptr->coeff = ptr1->coeff;
-        }
-        else if (ptr1->exp < ptr2->exp)
-        {
-            ptr->exp = ptr2->exp;
-            ptr->coeff = ptr2->coeff;
-        }
-        else
-        {
-            if (ptr1->coeff - ptr2->coeff != 0)
-            {
-                ptr->exp = ptr1->exp;
-                ptr->coeff = ptr1->coeff - ptr2->coeff;
-            }
         }
         ptr->next = NULL;
         p_sub = push(ptr, p_sub);
