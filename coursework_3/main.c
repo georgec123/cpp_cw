@@ -3,21 +3,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+float input_digit()
+{
+
+	float n;
+	printf("Input a number, negative to end:\n");
+	while (scanf("%f", &n) != 1)
+	{
+		printf("Please enter a number: ");
+		while (getchar() != '\n');
+	}
+	return n;
+}
+
 int main(void)
 {
 	float n, max, min;
 	int i = 1;
-	printf("Input a number, negative to end:\n");
-	scanf("%f", &n);
+	n = input_digit();
 	max = min = n;
-	
+
 	while (n >= 0)
 	{
-		printf("Input a number, negative to end:\n");
-		scanf("%f", &n);
-		
+		n = input_digit();
+
 		i++;
-		
+
 		if (max < n)
 		{
 			max = n;
@@ -27,11 +38,12 @@ int main(void)
 			min = n;
 		}
 	}
-	
 	printf("The number of values read is: %d.", i);
 	printf("The maximum value is: %f.", max);
 	printf("The minimum value is: %f.", min);
-	printf("The range is: %f.", max - min);
+	printf("The range is: %f.\n", max - min);
+
+	system("pause");
 
 	return EXIT_SUCCESS;
 }
