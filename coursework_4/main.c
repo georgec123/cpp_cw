@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#define numiter 5
+#define numiter 200
 
 #include <stdio.h>
 #include <stdlib.h>
