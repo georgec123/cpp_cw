@@ -90,7 +90,15 @@ void display(char const *string, struct node *ptr)
     {
         printf("%s%dx^%d", dummy, temp->coeff, temp->exp);
         temp = temp->next;
-        dummy = " + ";
+        //dummy = " + ";
+        if((temp != NULL)) {
+            if (temp->coeff >= 0)
+            {
+                dummy = " + ";
+            } else {
+                dummy = " ";
+            }
+        }
     }
     putchar('\n');
 }
@@ -176,7 +184,7 @@ struct node *subtraction(struct node *ptr1, struct node *ptr2, struct node *p_su
         else if (ptr1->exp < ptr2->exp)
         {
             ptr->exp = ptr2->exp;
-            ptr->coeff = -1 * ptr2->coeff;
+            ptr->coeff = - 1 * ptr2->coeff;
             ptr2 = ptr2->next;
         }
         else
@@ -209,7 +217,7 @@ struct node *subtraction(struct node *ptr1, struct node *ptr2, struct node *p_su
         }
         else
         {
-            ptr->coeff = -1 * ptr2->coeff;
+            ptr->coeff = - 1 * ptr2->coeff;
             ptr->exp = ptr2->exp;
             ptr2 = ptr2->next;
         }
