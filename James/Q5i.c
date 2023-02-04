@@ -12,7 +12,7 @@ void all_elements(int elem)
     //arr1 contains all the elements our second digit in the numerator/denominator can take
     int arr2[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    //Define each fraction as ab/cd where a,b,c, and d come from the arrays above. By symmetry, if ab/cd is a sleep fraction and ab = cd then so too is cd/ab.
+    //Define each fraction as ab/cd where a,b,c, and d come from the arrays above. By symmetry, if ab/cd is a sleepy fraction and ab = cd then so too is cd/ab.
     //We can use this property to reduce the numbe of fractions we must search
 
     //First fix the value of a in our fraction
