@@ -304,7 +304,7 @@ struct node *subtraction(struct node *ptr1, struct node *ptr2)
             ptr2 = ptr2->next;
         }
 
-        if (ptr1->coeff - ptr2->coeff != 0)
+        if (ptr->coeff != 0)
         {
             ptr->next = NULL;
             p_sub = push(ptr, p_sub);
