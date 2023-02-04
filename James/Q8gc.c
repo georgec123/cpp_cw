@@ -396,27 +396,25 @@ int evaluation(struct node *ptr1, int x)
     // ptr1(num)
     int total = 0;
 
-    int last_coef = 0;
-    int last_exp = ptr1->exp + 1;
-
-    while (ptr1 != NULL)
+    for (int i = ptr1->exp; i > 0; i--)
     {
-        if (ptr1->exp == last_exp - 1)
+        if (ptr1->exp == i)
         {
             // normal Horner method
-            total += last_coef * x + ptr1->coeff;
+            total = (total + ptr1->coeff) * x;
+            ptr1 = ptr1->next;
         }
         else
         {
-            // Horner method with a gap in the exponents
-            // same as (((total*x +0)*x +0)*x +0...)
-            total += last_coef * pow(x, last_exp - ptr1->exp - 1);
+            total = total * x;
         }
-        last_coef = ptr1->coeff;
-        last_exp = ptr1->exp;
-        ptr1 = ptr1->next;
     }
 
+    if (ptr1 != NULL)
+    {
+        // account for the last coefficient
+        total += ptr1->coeff;
+    }
 
     return total;
 }
