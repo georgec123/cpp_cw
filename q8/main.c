@@ -39,7 +39,7 @@ int main()
         if (choice != 1 && choice != 2)
         {
             printf("You have to pick either your first or second polynomial I'm afraid \n");
-            exit(0);
+            exit(EXIT_FAILURE);
         }
         else
         {
@@ -48,7 +48,7 @@ int main()
             if (isdigit(number))
             {
                 printf("That is not an integer \n");
-                exit(0);
+                exit(EXIT_FAILURE);
             }
             else
             {

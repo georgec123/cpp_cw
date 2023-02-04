@@ -8,7 +8,7 @@ struct node *new_empty_node(void)
     if (ptr == 0)
     {
         printf("Out of Memory Space:\n");
-        exit(0);
+        exit(EXIT_FAILURE);
     }
     
     // set all values to 0
@@ -34,7 +34,7 @@ struct node *create(struct node *p)
         if (scanf("%d", &ptr->coeff) != 1)
         {
             printf("You gave me too many values");
-            exit(0);
+            exit(EXIT_FAILURE);
         }
         else if (ptr->coeff != 0)
         {
