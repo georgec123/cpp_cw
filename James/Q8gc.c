@@ -260,6 +260,7 @@ struct node *addition(struct node *ptr1, struct node *ptr2)
     // if we have reached the end of one of the polynomials, we add the rest of the other polynomial to p_add
     struct node *right_copy = copy_polynomial(non_null_node);
     p_add = concat_polynomails(p_add, right_copy);
+    return p_add;
 }
 
 struct node *subtraction(struct node *ptr1, struct node *ptr2)
