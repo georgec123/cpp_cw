@@ -10,6 +10,6 @@
 
 /*Functions declaration*/
 void printing_board(char board[MAX][MAX]);
-void player1_move(char board[MAX][MAX]);
-void player2_move(char board[MAX][MAX]);
+void player_move(char board[MAX][MAX], int player);
+int player_input(char board[MAX][MAX], int player);
 int game_over(char board[MAX][MAX], int player);

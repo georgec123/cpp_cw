@@ -2,9 +2,12 @@
 /*The functions are symmetrical*/
 #include "header.h"
 
-void player1_move(char board[MAX][MAX]) {
-	int move, row, col;
-	printf("Player 1, please input the position of the move for the 3x3 grid:\n");
+
+int player_input(char board[MAX][MAX], int player){
+	
+	/*We ask the player to input the movement*/
+	int move, row, col;	
+	printf("Player %d, please input the position of the move for the 3x3 grid:\n", player);
 	scanf("%d", &move);
 	
 	/*We convert the movement number into a row, col format*/
@@ -20,32 +23,24 @@ void player1_move(char board[MAX][MAX]) {
 		move--;
 		row = move / MAX;
 		col = move % MAX;
-	}
+	}	
 
-	/*Finally the grid is changed*/
-	board[row][col] = 'X';
+	return move;
 }
 
-void player2_move(char board[MAX][MAX]) {
-	int move, row, col;
-	printf("Player 2, please input the position of the move for the 3x3 grid:\n");
-	scanf("%d", &move);
+void player_move(char board[MAX][MAX], int player) {
 	
-	/*We convert the movement number into a row, col format*/
-	move--;
-	row = move / MAX;
-	col = move % MAX;
-
-	/*We check that the movement is possible: it has to be in the grid and not already done*/
-	while (move + 1 < 1 || move + 1 > 9 || board[row][col] == 'X' || board[row][col] == 'O')
-	{
-		printf("That move is not valid, insert another:\n");
-		scanf("%d", &move);
-		move--;
-		row = move / MAX;
-		col = move % MAX;
-	}
+	int move = player_input(board, player);
+	int row = move / MAX;
+	int col = move % MAX;
 
 	/*Finally the grid is changed*/
-	board[row][col] = 'O';
+	char move_char;
+	if (player == 1) {
+		move_char = 'X';
+	}
+	else {
+		move_char = 'O';
+	}
+	board[row][col] = move_char;
 }
