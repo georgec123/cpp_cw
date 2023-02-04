@@ -5,12 +5,12 @@ C++ Coursework
 
 | # | George | James | Alberto |
 | - | ------ | ------| ------ |
-| 1 |   |   |   |
-| 2 |   |   |   |
-| 3 |  reviewed |   |  written |
+| 1 | written  | written  |   |
+| 2 |   | written  |   |
+| 3 |  reviewed | written  |  written |
 | 4 |  reviewed |   |  written |
 | 5 |  written |   |   |
 | 6 |   |   |   |
 | 7 |  half reviewed |   |  written  |
-| 8 |   |   |   |
+| 8 | written & reviewed  | written & reviewed |   |
 
