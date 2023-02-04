@@ -13,9 +13,9 @@ void all_elements(int elem)
     int arr2[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     //Define each fraction as ab/cd where a,b,c, and d come from the arrays above. By symmetry, if ab/cd is a sleepy fraction and ab = cd then so too is cd/ab.
-    //We can use this property to reduce the numbe of fractions we must search
+    //We can use this property to reduce the number of fractions we must search
 
-    //First fix the value of a in our fraction
+    //First fix the value of a in our fraction and loop through b
     for (int i = 0; i < size2; i++) {
 
         //elem_first represents ab
@@ -24,7 +24,7 @@ void all_elements(int elem)
         //elem_second represents b
         int elem_second = arr2[i];
 
-        //Now fix the value of c in our fraction
+        //Now fix the value of c in our fraction and loop through d
         for (int j = 0; j < size2; j++) {
 
             //elem_third represents cd
@@ -43,7 +43,7 @@ void all_elements(int elem)
         }
     }
 
-    //Fix the value of a in our fraction
+    //Fix the value of a in our fraction and loop through b
     for (int k = 0; k < size2; k++) {
 
         //elem_first represents ab
@@ -52,7 +52,7 @@ void all_elements(int elem)
         //elem_second represents b
         int elem_second = arr2[k];
 
-        //Now fix the value of d in our fraction
+        //Now fix the value of d in our fraction and loop through c
         for (int l = 0; l < size1; l++) {
 
             //elem_third represents cd
