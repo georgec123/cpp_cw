@@ -391,33 +391,31 @@ struct node *multiplication(struct node *ptr1, struct node *ptr2)
     return p_multi;
 }
 
-int evaluation(struct node *ptr1, int x)
+
+int evaluation(struct node *ptr1, int num)
 {
-    // ptr1(num)
     int total = 0;
 
-    for (int i = ptr1->exp; i > 0; i--)
+    for (int i=ptr1->exp; i>=0; i--)
     {
-        if (ptr1->exp == i)
-        {
-            // normal Horner method
-            total = (total + ptr1->coeff) * x;
+        // decrement through the expected increments
+        if (ptr1 == NULL){
+            // if the pointer is null, we have reached the end, so multiply by x
+            total = total*num;
+        }
+        else if (ptr1->exp == i){
+            // pointer is not null, and is expected exponent, so we do normal horner's
+            total = total*num + ptr1->coeff;
             ptr1 = ptr1->next;
         }
-        else
-        {
-            total = total * x;
+        else {
+            // not finished polynomial, but not expected exponent, so we multiply by x (ie total*x +0)
+            total = total*num;
         }
-    }
-
-    if (ptr1 != NULL)
-    {
-        // account for the last coefficient
-        total += ptr1->coeff;
     }
 
     return total;
-}
+    }
 
 int main()
 {
