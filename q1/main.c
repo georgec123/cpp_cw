@@ -8,7 +8,7 @@ int main(void)
 	char a, b;
 	printf("Input to characters: \n");
 	scanf("%c %c", &a, &b);
-	printf("Your caracters in reverse order are: %c\t%c\n", b, a);
+	printf("Your characters in reverse order are: %c\t%c\n", b, a);
 
 	return EXIT_SUCCESS;
 }
