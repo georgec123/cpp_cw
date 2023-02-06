@@ -17,33 +17,30 @@ float *until_first_negative_number()
     //Input first value and check if positive. If negative, we are done
     printf("Please input your first value: \n");
     scanf("%f", &a);
+    
     if (a > 0)
     {
-        ++cnt;
         min = a;
         max = a;
     }
 
     while (a > 0)
     {
-        //Loop until first negative value is inputted. Only count values up until this point when finding max, min, rng and cnt
-        printf("Oh damn, let's try again. Please input a new value: \n");
-        scanf("%f", &a_new);
-
-        if (a_new > a)
+        if (a > max)
         {
-            max = a_new;
+            max = a;
         }
-        else if (a_new < a && a_new > 0)
+        else if (a < min)
         {
-            min = a_new;
+            min = a;
         }
+        
         rng = max - min;
-        if (a_new > 0)
-        {
-            ++cnt;
-        }
-        a = a_new;
+        ++cnt;
+
+        //Loop until first negative value is inputted. Only count values up until this point when finding max, min, rng and cnt
+        printf("Please input a new value: \n");
+        scanf("%f", &a);     
     }
 
     //Assign values to the returns array
