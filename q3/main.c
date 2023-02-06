@@ -1,49 +1,64 @@
-#define _CRT_SECURE_NO_WARNINGS
-
 #include <stdio.h>
 #include <stdlib.h>
 
-float input_digit()
+float *until_first_negative_number()
 {
+    //Define initial variables
+    float a;
+    float a_new;
 
-	float n;
-	printf("Input a number, negative to end:\n");
-	while (scanf("%f", &n) != 1)
-	{
-		printf("Please enter a number: ");
-		while (getchar() != '\n');
-	}
-	return n;
+    float min = 0;
+    float max = 0;
+    float rng = 0;
+    float cnt = 0;
+
+    static float results[4];
+    
+    //Input first value and check if positive. If negative, we are done
+    printf("Please input your first value: \n");
+    scanf("%f", &a);
+    
+    if (a > 0)
+    {
+        min = a;
+        max = a;
+    }
+
+    while (a > 0)
+    {
+        if (a > max)
+        {
+            max = a;
+        }
+        else if (a < min)
+        {
+            min = a;
+        }
+        
+        rng = max - min;
+        ++cnt;
+
+        //Loop until first negative value is inputted. Only count values up until this point when finding max, min, rng and cnt
+        printf("Please input a new value: \n");
+        scanf("%f", &a);     
+    }
+
+    //Assign values to the returns array
+    results[0] = max;
+    results[1] = min;
+    results[2] = rng;
+    results[3] = cnt;
+    
+    //Return array
+    return results;
 }
-
 int main(void)
 {
-	float n, max, min;
-	int i = 1;
-	n = input_digit();
-	max = min = n;
+    float *r;
 
-	while (n >= 0)
-	{
-		n = input_digit();
+    //Outsource the steps to a separate function and return an array
+    r = until_first_negative_number();
 
-		i++;
-
-		if (max < n)
-		{
-			max = n;
-		}
-		if (min > n)
-		{
-			min = n;
-		}
-	}
-	printf("The number of values read is: %d.", i);
-	printf("The maximum value is: %f.", max);
-	printf("The minimum value is: %f.", min);
-	printf("The range is: %f.\n", max - min);
-
-	system("pause");
-
-	return EXIT_SUCCESS;
+    printf("We've found a negative number. \n");
+    printf("Max: %f\n Min: %f\n Range: %f\n Count %f\n", r[0], r[1], r[2], r[3]);
 }
