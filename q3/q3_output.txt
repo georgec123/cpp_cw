@@ -1,0 +1,20 @@
+Please input your first value, negative value to exit:
+1.1
+Please input a new value, negative value to exit:
+10.32
+Please input a new value, negative value to exit:
+0
+Please input a new value, negative value to exit:
+0.3
+Please input a new value, negative value to exit:
+-1
+
+->Negative number found.
+Maximum: 10.320000
+Minimum: 0.000000
+Range: 10.320000
+Number of non-negative values inserted: 4
+
+Please input your first value, negative value to exit:
+-1
+Exit without any inputs.
