@@ -1,0 +1,4 @@
+Input two characters:
+a
+b
+Your characters in reverse order are: b a
