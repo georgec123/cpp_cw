@@ -1,9 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
-#define numiter 200
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "header.h"
 
 int main(void)
