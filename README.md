@@ -5,7 +5,7 @@ C++ Coursework
 
 | # | George | James | Alberto |
 | - | ------ | ------| ------ |
-| 1 | written  | written  | reviwed  |
+| 1 | written  | written  | reviewed  |
 | 2 |   | written  | reviewed |
 | 3 |  reviewed | written  |  written |
 | 4 |  reviewed |   |  written |
