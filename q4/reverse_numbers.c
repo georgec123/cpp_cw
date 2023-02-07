@@ -1,8 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "header.h"
 
-#define numiter 200
 
 char* suffix_for_number(int number) {
 	int last_digit = number % 10;
