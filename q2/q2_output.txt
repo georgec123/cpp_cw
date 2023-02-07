@@ -1,0 +1,4 @@
+Loop a is executed: 1 times
+Loop b is executed: 0 times
+Loop c is executed: 3 times
+Loop d is executed: 1 times
