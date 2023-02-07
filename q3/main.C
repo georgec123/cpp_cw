@@ -19,6 +19,7 @@ void until_first_negative_number(void)
         return;
     }
     
+    /*We initialise to the only value that we have so far*/
     float min = a, max = a;
     float rng = 0;
     int cnt = 0;
@@ -27,7 +28,8 @@ void until_first_negative_number(void)
     {
         cnt++;
         //Loop until first negative value is inputted. Only count values up until this point when finding max, min, rng and cnt
-       
+        /*In the first pass through the loop none of the conditions are verified, but we need the input of a new variable
+           to go at the end, to be checked before reentering the loop.*/
         if (a > max)
         {
             max = a;
