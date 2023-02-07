@@ -1,0 +1,30 @@
+Input the 1st value.
+1
+Input the 2nd value.
+2
+Input the 3rd value.
+3
+Input the 4th value.
+4
+Input the 5th value.
+5
+Input the 6th value.
+6
+Input the 7th value.
+7
+Input the 8th value.
+8
+Input the 9th value.
+9
+Input the 10th value.
+10
+The 10th value is: 10.000000.
+The 9th value is: 9.000000.
+The 8th value is: 8.000000.
+The 7th value is: 7.000000.
+The 6th value is: 6.000000.
+The 5th value is: 5.000000.
+The 4th value is: 4.000000.
+The 3rd value is: 3.000000.
+The 2nd value is: 2.000000.
+The 1st value is: 1.000000.
