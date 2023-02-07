@@ -18,7 +18,7 @@ int main(void)
 	printf("Playing noughts and crosses. Player %d starts.\n", player);
 
 	/*The game starts*/
-	while (victory == 0 || moves < 9)
+	while (victory == 0 && moves < 9)
 	{
 		printing_board(grid);
 		player_move(grid, player);
@@ -37,7 +37,8 @@ int main(void)
 	}
 	else
 	{
-		printf("The winner is Player %d", victory);
+		printf("The winner is Player %d\n", victory);
 	}
+	system("pause");
 	return EXIT_SUCCESS;
 }
