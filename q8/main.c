@@ -21,7 +21,7 @@ int main()
 
     while (end!=1) {
 
-        printf("What shall we do with our new polynomials: Add (A), subtract (S), multiply (M) or evaluate (E)? \n");
+        printf("What shall we do with our new polynomials: Add (A), subtract (S), multiply (M), evaluate (E) or quit (Q)? \n");
         scanf(" %c", &action);
 
         switch (action)
