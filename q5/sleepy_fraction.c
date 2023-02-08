@@ -21,10 +21,6 @@ int check_frac(int num, int dom, int num_a, int num_b, int den_a, int den_b)
 
 int frac_sleepy(int numerator, int denominator)
 {
-	if (numerator == denominator)
-	{
-		return 0;
-	}
 	int num_quot = numerator / 10;
 	int num_div = numerator % 10;
 	int den_quot = denominator / 10;
@@ -39,9 +35,6 @@ int frac_sleepy(int numerator, int denominator)
 	{
 		if (check_frac(numerator, denominator, combs[i][0], combs[i][1], combs[i][2], combs[i][3]))
 		{
-	
-
-
 			print_frac(numerator, denominator);
 			print_frac(combs[i][1], combs[i][3]);
 			printf("\n");
