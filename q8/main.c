@@ -16,26 +16,28 @@ int main()
     printf("Enter for your second polynomial: \n");
     p2 = create(p2);
 
-    display("Polynomial 1: ", p1);
-    display("Polynomial 2: ", p2);
+    display("Polynomial 1", p1);
+    display("Polynomial 2", p2);
+
 
     while (end!=1) {
 
-        printf("What shall we do with our new polynomials: Add (A), subtract (S), multiply (M) or evaluate (E)? \n");
+        printf("\nAdd (A), subtract (S), multiply (M) or evaluate (E)? (Q) to quit. \n");
         scanf(" %c", &action);
 
         switch (action)
         {
         case 'A':
-            display("We have a new polynomial: ", addition(p1, p2));
+            display("Result", addition(p1, p2));
             break;
         case 'S':
-            display("We have a new polynomial: ", subtraction(p1, p2));
+            display("Result", subtraction(p1, p2));
             break;
         case 'M':
-            display("We have a new polynomial: ", multiplication(p1, p2));
+            display("Result", multiplication(p1, p2));
             break;
         case 'E':
+
             printf("Which polynomial would you like to evaluate? (1/2) \n");
             scanf(" %d", &choice);
             if (choice != 1 && choice != 2)
@@ -46,6 +48,7 @@ int main()
 
             printf("Please enter an integer for x in your polynomial \n");
             scanf(" %d", &number);
+            
             if (isdigit(number))
             {
                 printf("That is not an integer \n");
@@ -54,15 +57,10 @@ int main()
             else
             {
                 if (choice == 1)
-                {
-                    printf("The answer is: %d \n", evaluation(p1, number));
-                    break;
-                }
+                    printf("Result: %d", evaluation(p1, number));
                 else
-                {
-                    printf("The answer is: %d \n", evaluation(p2, number));
-                    break;
-                }
+                    printf("Result: %d", evaluation(p2, number));
+                break;
             }
         case 'Q':
             end = 1;
